@@ -2,21 +2,23 @@ import React, { Component } from "react";
 
 class Counter extends Component {
 
-  styles = {
-    fontSize: 50,
-    fontWeight: "bold",
-  };
+  componentDidUpdate (prevProps, prevState){
+    console.log("prevProps ", prevProps);
+    console.log("prevState ", prevState);
+    // if ( prevProps.counter.value != this.props.counter.value){
+    //   // Ajax call and get new data from server
+    // }
+  }
 
-
-
+  componentWillUnmount(){
+    console.log("Counter Unmounted");
+    
+  }
   render() {
-    console.log("Counter - rendered");
-
-    //   console.log(this.props);
-      
+    console.log("Counter - rendered");  
     return (        
       <div>
-        <span style={this.styles} className={this.getBadgeClasses()}>
+        <span className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span> 
         <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-secondary btn-sm" >
