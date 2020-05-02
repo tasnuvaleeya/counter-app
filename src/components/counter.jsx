@@ -10,6 +10,8 @@ class Counter extends Component {
 
 
   render() {
+    console.log("Counter - rendered");
+
     //   console.log(this.props);
       
     return (        

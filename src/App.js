@@ -12,7 +12,15 @@ class App extends React.Component {
       { id: 4, value: 0 },
     ],
   };
+  constructor(){
+    super();
+    console.log("App- constructor");
+    
+  }
 
+  componentDidMount(){
+    console.log("ComponentDidMount")
+  }
   handleIncrement = (counter) => {
     console.log(counter);
     const counters = [...this.state.counters];
@@ -34,6 +42,7 @@ class App extends React.Component {
     this.setState({ counters });
   };
   render() {
+    console.log("App renderd");
     return (
       <React.Fragment>
         <NavBar totalCounters= {this.state.counters.filter(c=>c.value >0).length}/>
