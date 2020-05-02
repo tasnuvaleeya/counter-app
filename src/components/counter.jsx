@@ -5,16 +5,9 @@ class Counter extends Component {
     count: 0,
   };
 
-  constructor() {
-    super();
-    // console.log("Constructor ", this);
-
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
-
-  handleIncrement() {
+  handleIncrement = () => {
     console.log("Increment Clicked!", this);
-  }
+  };
 
   render() {
     return (
